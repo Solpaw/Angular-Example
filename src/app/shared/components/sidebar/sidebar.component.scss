@@ -1,0 +1,29 @@
+:host {
+    display: block;
+    background: linear-gradient(#0d47a1,#42a5f5);
+    height: 100vh;
+    max-width: 250px;
+
+    img {
+        max-height: 150px;
+        height: auto;
+        width: auto;
+        margin: auto;
+    }
+
+    li {
+        padding: 10px;
+
+        div {
+            padding: 15px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 700;
+            text-align: center;
+
+            &:hover, &.active {
+                background-color: rgba(173, 216, 230, 0.5);
+            }
+        }
+    }
+}

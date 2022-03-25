@@ -1,0 +1,14 @@
+@use './fonts.scss';
+
+body {
+    font-family: 'Regular' !important;
+}
+
+ol, ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}
