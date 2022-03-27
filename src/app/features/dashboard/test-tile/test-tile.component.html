@@ -1,0 +1,8 @@
+<div class="box align-items-center" [class.no-img]="!url">
+    <div>{{index + 1}}.</div>
+    <img *ngIf="url" [src]="url">
+    <div>
+        <h3>{{title}}</h3>
+        <p>{{content}}</p>
+    </div>
+</div>

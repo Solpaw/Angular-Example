@@ -1,0 +1,17 @@
+<form [formGroup]="form" class="row">
+    <mat-form-field class="d-block col-12" appearance="outline">
+        <mat-label>Amount of elements</mat-label>
+        <input matInput type="number" formControlName="amount">
+    </mat-form-field>
+    <mat-form-field class="d-block col-12" appearance="outline">
+        <mat-label>With image</mat-label>
+        <mat-select formControlName="image">
+          <mat-option [value]="true">Yes</mat-option>
+          <mat-option [value]="false">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="buttons d-flex justify-content-end gap-2">
+          <button class="btn btn-secondary" (click)="cancel()">Cancel</button>
+          <button class="btn btn-primary" (click)="save()">Generate</button>
+      </div>
+</form>

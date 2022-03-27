@@ -1,0 +1,33 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$blue-primary: (
+ 50: #0d6efd,
+ 100: #0d6efd,
+ 200: #0d6efd,
+ 300: #0d6efd,
+ 400: #0d6efd,
+ 500:#0d6efd,
+ 600: #0d6efd,
+ 700: #0d6efd,
+ 800: #0d6efd,
+ 900: #0d6efd,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: rgba(black, 0.87),
+   600: rgba(black, 0.87),
+   700: rgba(black, 0.87),
+   800: rgba(black, 0.87),
+   900: rgba(black, 0.87),
+ )
+);
+
+$my-app-primary: mat-palette($blue-primary);
+$my-app-accent:  mat-palette($mat-light-blue);
+$my-app-warn:    mat-palette($mat-red);
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+@include angular-material-theme($my-app-theme);
