@@ -2,8 +2,13 @@
     <button class="btn btn-primary" (click)="generate()">Generate</button>
     <button class="btn btn-primary" (click)="edit()">Edit</button>
     <button class="btn btn-primary" (click)="remove()">Delete</button>
+    <button class="btn btn-primary" (click)="runTest()">Run test</button>
 </header>
 <div>
-    <app-test-tile *ngFor="let item of data" [url]="item.url" [title]="item.title" [content]="item.content" [index]="item.index"></app-test-tile>
+    <app-test-tile *ngFor="let item of data" [url]="item.url" [title]="item.title" [content]="item.content" [index]="item.index"
+    (generateComplete)="generateComplete()"
+    (editComplete)="editComplete()"
+    (removeComplete)="removeComplete()"
+    ></app-test-tile>
     <div *ngIf="!data.length" class="mt-5 empty">No items</div>
 </div>

@@ -1,5 +1,4 @@
-import { TestModel } from './../../../shared/models/generic.model';
-import { Component, Input, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-test-tile',
@@ -12,18 +11,24 @@ export class TestTileComponent implements OnInit, OnDestroy, OnChanges {
   @Input() index!: number;
   @Input() title!: string;
   @Input() content!: string;
+  @Output() generateComplete = new EventEmitter();
+  @Output() editComplete = new EventEmitter();
+  @Output() removeComplete = new EventEmitter();
 
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.index + 1, 'OnChanges')
+    // console.log(this.index + 1, 'OnChanges')
+    this.editComplete.emit();
   }
 
   ngOnDestroy(): void {
-    console.log(this.index + 1, 'OnDestroy')
+    // console.log(this.index + 1, 'OnDestroy')
+    this.removeComplete.emit();
   }
 
   ngOnInit(): void {
-    console.log(this.index + 1, 'OnInit')
+    // console.log(this.index + 1, 'OnInit')
+    this.generateComplete.emit();
   }
 }
