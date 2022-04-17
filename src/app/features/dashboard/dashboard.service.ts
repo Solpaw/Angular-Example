@@ -87,7 +87,7 @@ export class DashboardService {
         this.generateTestList(i, true);
         const val = await firstValueFrom(this.opComplete)
         unitResults.push(val);
-        console.log(i, val)
+        console.log('generate', i, val)
       }
       this.results.push(unitResults);
     }
@@ -105,7 +105,7 @@ export class DashboardService {
         this.editItems(i, true);
         const val = await firstValueFrom(this.opComplete)
         unitResults.push(val);
-        console.log(i, val)
+        console.log('edit', i, val)
       }
       this.results.push(unitResults);
     }
@@ -122,11 +122,10 @@ export class DashboardService {
       for(let j = 0; j < repeats; j++) {
         this.generateTestList(maxAmount * 2, true);
         let val = await firstValueFrom(this.opComplete)
-        console.log('generated', val)
         this.removeFromList(i, true);
         val = await firstValueFrom(this.opComplete)
         unitResults.push(val);
-        console.log('removed', val)
+        console.log('remove', i, val)
       }
       this.results.push(unitResults);
     }
